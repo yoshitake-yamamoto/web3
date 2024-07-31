@@ -63,6 +63,7 @@ view: meme_koins_token_transfer_analytics_2 {
 
   measure: total_trades {
     type: sum
+    drill_fields: [category, mint, minted_on_date, name, symbol, total_trades, transfer_date]
     sql: ${trades} ;;  }
 
   measure: average_total_trades {
@@ -71,7 +72,7 @@ view: meme_koins_token_transfer_analytics_2 {
 
   measure: count {
     type: count
-    drill_fields: [name]
+    drill_fields: [category, mint, minted_on_date, name, symbol, total_trades, transfer_date]
   }
 
   measure: count_category {

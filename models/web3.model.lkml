@@ -19,13 +19,13 @@ explore: coin_sentiment_fact {}
 explore: cointwittersentiment {}
 
 explore: meme_koins_token_transfer_analytics_2 {
-  join: coin_sentiment_fact {
-    relationship: many_to_one
-    sql_on: ${meme_koins_token_transfer_analytics_2.symbol} = ${coin_sentiment_fact.coin} ;;
-  }
-
-  # join: cointwittersentiment {
-  #   relationship: many_to_many
-  #   sql_on: ${meme_koins_token_transfer_analytics_2.symbol} = ${cointwittersentiment.coin} ;;
+  # join: coin_sentiment_fact {
+  #   relationship: many_to_one
+  #   sql_on: ${meme_koins_token_transfer_analytics_2.symbol} = ${coin_sentiment_fact.coin} ;;
   # }
+
+  join: cointwittersentiment {
+    relationship: many_to_many
+    sql_on: ${meme_koins_token_transfer_analytics_2.symbol} = ${cointwittersentiment.coin} ;;
+  }
 }
